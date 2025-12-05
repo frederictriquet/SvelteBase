@@ -1,0 +1,43 @@
+{
+	"name": "sveltebase",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:ui": "vitest --ui",
+		"test:coverage": "vitest run --coverage",
+		"test:e2e": "playwright test",
+		"test:e2e:ui": "playwright test --ui",
+		"test:e2e:debug": "playwright test --debug",
+		"test:all": "npm run test && npm run test:e2e",
+		"docker:build": "docker compose build",
+		"docker:up": "docker compose up -d",
+		"docker:down": "docker compose down",
+		"docker:logs": "docker compose logs -f",
+		"docker:restart": "docker compose restart"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.57.0",
+		"@sveltejs/adapter-auto": "^3.2.5",
+		"@sveltejs/kit": "^2.8.3",
+		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"@testing-library/jest-dom": "^6.9.1",
+		"@testing-library/svelte": "^5.2.9",
+		"@vitest/ui": "^4.0.15",
+		"happy-dom": "^20.0.11",
+		"jsdom": "^27.0.1",
+		"svelte": "^5.0.0",
+		"svelte-check": "^4.0.5",
+		"typescript": "^5.6.3",
+		"vite": "^5.4.11",
+		"vitest": "^4.0.15"
+	}
+}
