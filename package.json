@@ -18,6 +18,8 @@
 		"test:e2e:ui": "playwright test --ui",
 		"test:e2e:debug": "playwright test --debug",
 		"test:all": "npm run test && npm run test:e2e",
+		"test:mutation": "stryker run",
+		"test:mutation:incremental": "stryker run --incremental",
 		"docker:build": "docker compose build",
 		"docker:up": "docker compose up -d",
 		"docker:down": "docker compose down",
@@ -26,6 +28,9 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.57.0",
+		"@stryker-mutator/core": "^8.6.0",
+		"@stryker-mutator/typescript-checker": "^8.6.0",
+		"@stryker-mutator/vitest-runner": "^8.6.0",
 		"@sveltejs/adapter-auto": "^3.2.5",
 		"@sveltejs/kit": "^2.8.3",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
