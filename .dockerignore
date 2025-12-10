@@ -22,6 +22,8 @@ coverage/
 test-results/
 playwright-report/
 playwright/.cache/
+.stryker-tmp/
+reports/
 
 # IDE
 .vscode/
@@ -38,6 +40,9 @@ Thumbs.db
 .git/
 .gitignore
 .gitattributes
+
+# GitHub
+.github/
 
 # Docker
 Dockerfile

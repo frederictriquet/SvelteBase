@@ -2,19 +2,19 @@
 const config = {
 	packageManager: 'npm',
 	reporters: ['json','html', 'clear-text', 'progress', 'dashboard'],
-	testRunner: 'vitest',
-	vitest: {
-		configFile: 'vitest.config.ts'
+	testRunner: 'command',
+	testRunnerNodeArgs: [],
+	commandRunner: {
+		command: 'npm run test'
 	},
-	coverageAnalysis: 'perTest',
-	checkers: ['typescript'],
-	tsconfigFile: 'tsconfig.json',
+	coverageAnalysis: 'off',
+	disableTypeChecks: false,
 	mutate: [
-		'src/**/*.ts',
-		'src/**/*.js',
+		'src/lib/**/*.ts',
 		'!src/**/*.test.ts',
 		'!src/**/*.spec.ts',
 		'!src/**/*.d.ts',
+		'!src/**/*.svelte',
 		'!src/tests/**',
 		'!src/**/*.config.*'
 	],
@@ -29,7 +29,7 @@ const config = {
 	],
 	timeoutMS: 60000,
 	timeoutFactor: 1.5,
-	maxConcurrentTestRunners: 2,
+	concurrency: 2,
 	thresholds: {
 		high: 80,
 		low: 60,
