@@ -1,8 +1,11 @@
 {
 	"name": "sveltebase",
+	"description": "",
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
+	"author": "",
+	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -24,7 +27,9 @@
 		"docker:up": "docker compose up -d",
 		"docker:down": "docker compose down",
 		"docker:logs": "docker compose logs -f",
-		"docker:restart": "docker compose restart"
+		"docker:restart": "docker compose restart",
+		"lint-staged": "lint-staged",
+		"commitlint": "commitlint"
 	},
 	"lint-staged": {
 		"*.{js,ts,svelte}": [
