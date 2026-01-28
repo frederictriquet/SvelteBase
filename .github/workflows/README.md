@@ -44,9 +44,14 @@ Sans cette configuration, Release Please ne pourra pas créer de PRs automatique
 
 ### 2. Docker Build & Publish (`docker.yml`)
 
-**Déclencheurs:** Pushs sur la branche `master` uniquement
+**Déclencheurs:** Tous les pushs et pull requests
 
 **Objectif:** Build et publication des images Docker sur GitHub Container Registry
+
+**Comportement:**
+
+- **Sur toutes les branches** : Build Docker (validation uniquement)
+- **Sur master uniquement** : Build + Push vers ghcr.io + Attestation
 
 **Fonctionnalités:**
 
@@ -61,6 +66,8 @@ Sans cette configuration, Release Please ne pourra pas créer de PRs automatique
 **Registry:** `ghcr.io/<votre-username>/sveltebase`
 
 **Authentification:** Utilise `GITHUB_TOKEN` (fourni automatiquement)
+
+**Note:** Cela permet de valider que le Docker build fonctionne sur toutes les branches sans polluer le registry.
 
 ### 3. Release Please (`release.yml`)
 
